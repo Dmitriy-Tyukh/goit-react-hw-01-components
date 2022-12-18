@@ -17,7 +17,8 @@ export default function TransactionHistory({ items }) {
           <tr key={id}>
             <td>{type}</td>
             <td>{amount}</td>
-            <td>{currency}</td>
+                <td>{currency}</td>
+                
           </tr>
         ))}
       </tbody>
@@ -26,11 +27,12 @@ export default function TransactionHistory({ items }) {
 }
 
 TransactionHistory.propTypes = {
-  stats: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
     })
   ),
 };
